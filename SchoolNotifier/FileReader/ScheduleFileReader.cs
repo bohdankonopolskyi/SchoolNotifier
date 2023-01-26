@@ -5,16 +5,6 @@ public class ScheduleFileReader : IFileReader
     private string[] _lines;
     private List<TimeOnly> _times;
 
-    public string[] Schedule
-    {
-        get => _lines;
-    }
-
-    public List<TimeOnly> Times
-    {
-        get => _times;
-    }
-
     public string[] ReadFile(string filepath)
     {
         _lines = File.ReadAllLines(filepath);
