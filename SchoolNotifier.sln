@@ -1,8 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolNotifier", "SchoolNotifier\SchoolNotifier.csproj", "{75B9EDA0-7BB6-496D-815E-E112C4B037CC}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32319.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolNotifier", "SchoolNotifier\SchoolNotifier.csproj", "{75B9EDA0-7BB6-496D-815E-E112C4B037CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleClient", "ConsoleClient\ConsoleClient.csproj", "{79F714D1-6A3C-4E0D-AF8D-39582CB09DA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleClient", "ConsoleClient\ConsoleClient.csproj", "{79F714D1-6A3C-4E0D-AF8D-39582CB09DA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolNotifier.Forms", "SchoolNotifier.Forms\SchoolNotifier.Forms.csproj", "{99357932-C34E-42FA-BC47-ED6D0941ABA5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +23,15 @@ Global
 		{79F714D1-6A3C-4E0D-AF8D-39582CB09DA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79F714D1-6A3C-4E0D-AF8D-39582CB09DA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79F714D1-6A3C-4E0D-AF8D-39582CB09DA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99357932-C34E-42FA-BC47-ED6D0941ABA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99357932-C34E-42FA-BC47-ED6D0941ABA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99357932-C34E-42FA-BC47-ED6D0941ABA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99357932-C34E-42FA-BC47-ED6D0941ABA5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D7D64A6D-DC9D-444B-87F6-5A0BA8931BEC}
 	EndGlobalSection
 EndGlobal

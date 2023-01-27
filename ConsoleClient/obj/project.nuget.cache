@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZngQWNtGT723QwUGc3p3WxIMtV/hGl2NVIw4fUef1GRJvoaQ0GKkNTGSFEoaWLNBPIK3WRqTdLNunEzZG8g7DQ==",
+  "dgSpecHash": "18fVSNujHzwXpKDlOzSnblrZcjiW4XgT/2bKlKDSgprxQ/BmC1XHbjq4wFK4zmM4XvWuETOqLCnvkXCQyEWzig==",
   "success": true,
-  "projectFilePath": "/Users/bohdankonopolskyi/RiderProjects/SchoolNotifier/ConsoleClient/ConsoleClient.csproj",
+  "projectFilePath": "C:\\Users\\kadde\\source\\repos\\SchoolNotifier\\ConsoleClient\\ConsoleClient.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

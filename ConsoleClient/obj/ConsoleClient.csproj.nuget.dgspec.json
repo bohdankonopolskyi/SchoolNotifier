@@ -1,33 +1,39 @@
 {
   "format": 1,
   "restore": {
-    "/Users/bohdankonopolskyi/RiderProjects/SchoolNotifier/ConsoleClient/ConsoleClient.csproj": {}
+    "C:\\Users\\kadde\\source\\repos\\SchoolNotifier\\ConsoleClient\\ConsoleClient.csproj": {}
   },
   "projects": {
-    "/Users/bohdankonopolskyi/RiderProjects/SchoolNotifier/ConsoleClient/ConsoleClient.csproj": {
+    "C:\\Users\\kadde\\source\\repos\\SchoolNotifier\\ConsoleClient\\ConsoleClient.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/bohdankonopolskyi/RiderProjects/SchoolNotifier/ConsoleClient/ConsoleClient.csproj",
+        "projectUniqueName": "C:\\Users\\kadde\\source\\repos\\SchoolNotifier\\ConsoleClient\\ConsoleClient.csproj",
         "projectName": "ConsoleClient",
-        "projectPath": "/Users/bohdankonopolskyi/RiderProjects/SchoolNotifier/ConsoleClient/ConsoleClient.csproj",
-        "packagesPath": "/Users/bohdankonopolskyi/.nuget/packages/",
-        "outputPath": "/Users/bohdankonopolskyi/RiderProjects/SchoolNotifier/ConsoleClient/obj/",
+        "projectPath": "C:\\Users\\kadde\\source\\repos\\SchoolNotifier\\ConsoleClient\\ConsoleClient.csproj",
+        "packagesPath": "C:\\Users\\kadde\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kadde\\source\\repos\\SchoolNotifier\\ConsoleClient\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/bohdankonopolskyi/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\kadde\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/bohdankonopolskyi/RiderProjects/SchoolNotifier/SchoolNotifier/SchoolNotifier.csproj": {
-                "projectPath": "/Users/bohdankonopolskyi/RiderProjects/SchoolNotifier/SchoolNotifier/SchoolNotifier.csproj"
+              "C:\\Users\\kadde\\source\\repos\\SchoolNotifier\\SchoolNotifier\\SchoolNotifier.csproj": {
+                "projectPath": "C:\\Users\\kadde\\source\\repos\\SchoolNotifier\\SchoolNotifier\\SchoolNotifier.csproj"
               }
             }
           }
@@ -47,8 +53,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -57,26 +62,32 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/Users/bohdankonopolskyi/.dotnet/sdk/6.0.400/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/bohdankonopolskyi/RiderProjects/SchoolNotifier/SchoolNotifier/SchoolNotifier.csproj": {
+    "C:\\Users\\kadde\\source\\repos\\SchoolNotifier\\SchoolNotifier\\SchoolNotifier.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/bohdankonopolskyi/RiderProjects/SchoolNotifier/SchoolNotifier/SchoolNotifier.csproj",
+        "projectUniqueName": "C:\\Users\\kadde\\source\\repos\\SchoolNotifier\\SchoolNotifier\\SchoolNotifier.csproj",
         "projectName": "SchoolNotifier",
-        "projectPath": "/Users/bohdankonopolskyi/RiderProjects/SchoolNotifier/SchoolNotifier/SchoolNotifier.csproj",
-        "packagesPath": "/Users/bohdankonopolskyi/.nuget/packages/",
-        "outputPath": "/Users/bohdankonopolskyi/RiderProjects/SchoolNotifier/SchoolNotifier/obj/",
+        "projectPath": "C:\\Users\\kadde\\source\\repos\\SchoolNotifier\\SchoolNotifier\\SchoolNotifier.csproj",
+        "packagesPath": "C:\\Users\\kadde\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kadde\\source\\repos\\SchoolNotifier\\SchoolNotifier\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/bohdankonopolskyi/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\kadde\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -100,8 +111,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -110,7 +120,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/Users/bohdankonopolskyi/.dotnet/sdk/6.0.400/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
