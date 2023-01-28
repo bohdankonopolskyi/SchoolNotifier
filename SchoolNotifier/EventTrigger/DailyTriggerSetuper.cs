@@ -2,10 +2,10 @@ namespace SchoolNotifier;
 
 public class DailyTriggerSetuper
 {
-    private IEnumerable<TimeOnly> _intervals;
+    private List<TimeOnly> _intervals;
     private List<DailyTrigger> _triggers;
-    private IFileReader _reader;
-    public DailyTriggerSetuper(IFileReader reader)
+    private IFileManager _reader;
+    public DailyTriggerSetuper(IFileManager reader)
     {
         _reader = reader;
     }
@@ -44,6 +44,11 @@ public class DailyTriggerSetuper
     public void SetUpIntervals(string filePath)
     {
        _reader.ReadFile(filePath);
-       _intervals = _reader.GetTimes();
+       _intervals = new List<TimeOnly>();
+
+        foreach( var date in _reader.GetTimes())
+        {
+            _intervals.Add( TimeOnly.FromDateTime(date));
+        }   
     }
 }

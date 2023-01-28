@@ -17,12 +17,12 @@ namespace SchoolNotifier.Interface
         private string _scheduleFilePath = Environment.CurrentDirectory;
         private string _audioFilePath = Environment.CurrentDirectory;
         private DailyTriggerSetuper _setuper;
-        private IFileReader _reader;
+        private IFileManager _fileManager;
         public Form1()
         {
             InitializeComponent();
-           _reader = new ScheduleFileReader();
-            _setuper = new  DailyTriggerSetuper(_reader);
+           _fileManager = new ScheduleFileReader();
+            _setuper = new  DailyTriggerSetuper(_fileManager);
         }
 
         private void SelectScheduleBtn_Click(object sender, EventArgs e)

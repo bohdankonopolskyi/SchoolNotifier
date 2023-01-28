@@ -1,9 +1,9 @@
 namespace SchoolNotifier;
 
-public class ScheduleFileReader : IFileReader
+public class ScheduleFileReader : IFileManager
 {
     private string[] _lines;
-    private List<TimeOnly> _times;
+    private List<DateTime> _times;
 
     public string[] ReadFile(string filepath)
     {
@@ -11,9 +11,9 @@ public class ScheduleFileReader : IFileReader
         return _lines;
     }
 
-    public List<TimeOnly> GetTimes()
+    public List<DateTime> GetTimes()
     {
-        _times = new List<TimeOnly>();
+        _times = new List<DateTime>();
 
         foreach (var line in _lines)
         {
@@ -25,7 +25,7 @@ public class ScheduleFileReader : IFileReader
         return _times;
     }
 
-    public TimeOnly ParseTimeOnly(string[] splited)
+    public DateTime ParseTimeOnly(string[] splited)
     {
         int hours = 0, minutes = 0, seconds = 0;
         try
@@ -47,7 +47,7 @@ public class ScheduleFileReader : IFileReader
             //     throw new ArgumentException("Seconds must be in range 0..59");
 
             Console.WriteLine($"Time: {hours}:{minutes}:{seconds}");
-            return new TimeOnly(hours, minutes, seconds);
+            return new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, hours, minutes, seconds);
         }
         catch (FormatException e)
         {
@@ -60,4 +60,18 @@ public class ScheduleFileReader : IFileReader
             throw new ArgumentException(e.Message);
         }
     }
+
+    public void CopyFile(string source, string destination, string defaultFileName)
+    {
+        if (string.IsNullOrEmpty(source))
+            return;
+        
+
+        var destinationFile = string.IsNullOrEmpty(Path.GetFileName(destination)) ? Path.GetFileName(destination) : defaultFileName;
+        destination = Path.Combine(Environment.CurrentDirectory, destinationFile);
+
+        File.Copy(source, destination, overwrite: true);
+    }
+
+    
 }
