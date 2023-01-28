@@ -32,6 +32,7 @@
             this.scheduleFilePathTextBox = new System.Windows.Forms.TextBox();
             this.selectAudioFileBtn = new System.Windows.Forms.Button();
             this.audioFilePathTextBox = new System.Windows.Forms.TextBox();
+            this.activateBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // SelectScheduleBtn
@@ -44,14 +45,14 @@
             this.SelectScheduleBtn.UseVisualStyleBackColor = true;
             this.SelectScheduleBtn.Click += new System.EventHandler(this.SelectScheduleBtn_Click);
             // 
-            // scheduleFilePath
+            // scheduleFilePathTextBox
             // 
             this.scheduleFilePathTextBox.Location = new System.Drawing.Point(28, 200);
-            this.scheduleFilePathTextBox.Name = "scheduleFilePath";
+            this.scheduleFilePathTextBox.Name = "scheduleFilePathTextBox";
             this.scheduleFilePathTextBox.Size = new System.Drawing.Size(412, 20);
             this.scheduleFilePathTextBox.TabIndex = 1;
             // 
-            // button1
+            // selectAudioFileBtn
             // 
             this.selectAudioFileBtn.Location = new System.Drawing.Point(640, 255);
             this.selectAudioFileBtn.Name = "selectAudioFileBtn";
@@ -61,18 +62,29 @@
             this.selectAudioFileBtn.UseVisualStyleBackColor = true;
             this.selectAudioFileBtn.Click += new System.EventHandler(this.selectAudioFileBtn_Click);
             // 
-            // textBox1
+            // audioFilePathTextBox
             // 
             this.audioFilePathTextBox.Location = new System.Drawing.Point(546, 200);
-            this.audioFilePathTextBox.Name = "textBox1";
+            this.audioFilePathTextBox.Name = "audioFilePathTextBox";
             this.audioFilePathTextBox.Size = new System.Drawing.Size(370, 20);
             this.audioFilePathTextBox.TabIndex = 3;
+            // 
+            // activateBtn
+            // 
+            this.activateBtn.Location = new System.Drawing.Point(37, 396);
+            this.activateBtn.Name = "activateBtn";
+            this.activateBtn.Size = new System.Drawing.Size(75, 23);
+            this.activateBtn.TabIndex = 4;
+            this.activateBtn.Text = "Активувати";
+            this.activateBtn.UseVisualStyleBackColor = true;
+            this.activateBtn.Click += new System.EventHandler(this.activateBtn_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(950, 652);
+            this.Controls.Add(this.activateBtn);
             this.Controls.Add(this.audioFilePathTextBox);
             this.Controls.Add(this.selectAudioFileBtn);
             this.Controls.Add(this.scheduleFilePathTextBox);
@@ -90,6 +102,7 @@
         private System.Windows.Forms.TextBox scheduleFilePathTextBox;
         private System.Windows.Forms.Button selectAudioFileBtn;
         private System.Windows.Forms.TextBox audioFilePathTextBox;
+        private System.Windows.Forms.Button activateBtn;
     }
 }
 

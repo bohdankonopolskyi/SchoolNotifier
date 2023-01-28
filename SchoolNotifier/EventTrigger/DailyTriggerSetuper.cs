@@ -10,19 +10,34 @@ public class DailyTriggerSetuper
         _reader = reader;
     }
     
-    public void SetUpTriggers()
+    public void SubscribeTriggers(Action action)
     {
         _triggers = new List<DailyTrigger>();
-
+        
         foreach (var time in _intervals)
         {
             var trigger = new DailyTrigger(time.Hour, time.Minute, time.Second);
             trigger.OnTimeTriggered += () =>
             {
+                action();
+
                 Console.WriteLine(
                     $"Event triggered at time: {time.Hour.ToString()}:{time.Minute.ToString()}:{time.Second.ToString()}");
             };
             _triggers.Add(trigger);
+        }
+    }
+
+    public void UnsubscribeTriggers()
+    {
+        if(_triggers != null)
+        foreach (var trigger in _triggers)
+        {
+            trigger.OnTimeTriggered -= () =>
+            {
+                Console.WriteLine("Trigger is unsubscribed");
+            };
+            _triggers.Remove(trigger);
         }
     }
 
