@@ -33,11 +33,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kadde\\source\\repos\\SchoolNotifier\\ConsoleClient\\ConsoleClient.csproj",
-      "projectName": "ConsoleClient",
-      "projectPath": "C:\\Users\\kadde\\source\\repos\\SchoolNotifier\\ConsoleClient\\ConsoleClient.csproj",
+      "projectUniqueName": "C:\\Users\\kadde\\source\\repos\\SchoolNotifier\\SchoolNotifier.Interface\\SchoolNotifier.Interface.csproj",
+      "projectName": "SchoolNotifier.Interface",
+      "projectPath": "C:\\Users\\kadde\\source\\repos\\SchoolNotifier\\SchoolNotifier.Interface\\SchoolNotifier.Interface.csproj",
       "packagesPath": "C:\\Users\\kadde\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kadde\\source\\repos\\SchoolNotifier\\ConsoleClient\\obj\\",
+      "outputPath": "C:\\Users\\kadde\\source\\repos\\SchoolNotifier\\SchoolNotifier.Interface\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -86,6 +86,9 @@
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WindowsForms": {
+            "privateAssets": "none"
           }
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"

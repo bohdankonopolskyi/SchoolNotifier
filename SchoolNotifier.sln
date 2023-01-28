@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolNotifier", "SchoolNot
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleClient", "ConsoleClient\ConsoleClient.csproj", "{79F714D1-6A3C-4E0D-AF8D-39582CB09DA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolNotifier.Forms", "SchoolNotifier.Forms\SchoolNotifier.Forms.csproj", "{99357932-C34E-42FA-BC47-ED6D0941ABA5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forms", "SchoolNotifier.Forms\Forms.csproj", "{99357932-C34E-42FA-BC47-ED6D0941ABA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolNotifier.Interface", "SchoolNotifier.Interface\SchoolNotifier.Interface.csproj", "{1FCE7737-FF8E-4B9B-AA9E-8E3CA1061097}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{99357932-C34E-42FA-BC47-ED6D0941ABA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99357932-C34E-42FA-BC47-ED6D0941ABA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99357932-C34E-42FA-BC47-ED6D0941ABA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FCE7737-FF8E-4B9B-AA9E-8E3CA1061097}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FCE7737-FF8E-4B9B-AA9E-8E3CA1061097}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FCE7737-FF8E-4B9B-AA9E-8E3CA1061097}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FCE7737-FF8E-4B9B-AA9E-8E3CA1061097}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
