@@ -14,8 +14,8 @@ namespace SchoolNotifier.Interface
 {
     public partial class Form1 : Form
     {
-        private string _scheduleFilePath = @"C:\Users\kadde\Desktop\times.txt";
-        private string _audioFilePath = @"C:\Users\kadde\Downloads\sample-5s.wav";
+        private string _scheduleFilePath = Environment.CurrentDirectory;
+        private string _audioFilePath = Environment.CurrentDirectory;
         private DailyTriggerSetuper _setuper;
         private IFileReader _reader;
         public Form1()
@@ -34,9 +34,28 @@ namespace SchoolNotifier.Interface
 
         private void selectAudioFileBtn_Click(object sender, EventArgs e)
         {
-            string filePath = OpenDialog();
+            string filePath = OpenDialog("wav files (*.wav)|*.wav|All files (*.*)|*.*");
+           
             _audioFilePath = filePath;
             audioFilePathTextBox.Text = filePath;
+
+            var filetype = "sound" + Path.GetExtension(filePath);
+            audioFilePathTextBox.Text = filetype;
+            overWriteFile(filePath, _audioFilePath, filetype);
+        }
+
+        private void overWriteFile(string source, string destination, string defaultFileName)
+        {
+            if(string.IsNullOrEmpty(source))
+            {
+                return;
+            }
+
+            var destinationFile = string.IsNullOrEmpty(Path.GetFileName(destination)) ? Path.GetFileName(destination) : defaultFileName;
+            destination = Path.Combine(Environment.CurrentDirectory, destinationFile);
+
+            File.Copy(source, destination, overwrite: true);
+
         }
 
         private string OpenDialog(string filter = "")
