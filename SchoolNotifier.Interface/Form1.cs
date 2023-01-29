@@ -8,7 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
-using SchoolNotifier;
+using SchoolNotifier.EventNotifications;
+using SchoolNotifier.FileReader.JSON;
+using NotifierService.EventTrigger;
 
 namespace SchoolNotifier.Interface
 {
@@ -16,13 +18,16 @@ namespace SchoolNotifier.Interface
     {
         private string _scheduleFilePath = Environment.CurrentDirectory;
         private string _audioFilePath = Environment.CurrentDirectory;
-        private DailyTriggerSetuper _setuper;
+        private DailyTriggerService _setuper;
         private IFileManager _fileManager;
+        private JSONSerializer<List<Notification>> jSONSerializer;
+        private List<Notification> _notifications;
+        private Notification _currentNotification;
         public Form1()
         {
             InitializeComponent();
-           _fileManager = new ScheduleFileReader();
-            _setuper = new  DailyTriggerSetuper(_fileManager);
+          
+            
         }
 
         private void SelectScheduleBtn_Click(object sender, EventArgs e)
@@ -30,6 +35,9 @@ namespace SchoolNotifier.Interface
             string filePath = OpenDialog("txt files (*.txt)|*.txt|All files (*.*)|*.*");
 
             scheduleFilePathTextBox.Text = filePath;
+
+            _scheduleFilePath = filePath;
+
         }
 
         private void selectAudioFileBtn_Click(object sender, EventArgs e)
@@ -41,22 +49,10 @@ namespace SchoolNotifier.Interface
 
             var filetype = "sound" + Path.GetExtension(filePath);
             audioFilePathTextBox.Text = filetype;
-            overWriteFile(filePath, _audioFilePath, filetype);
+           _fileManager.CopyFile(filePath, _audioFilePath, filetype);
         }
 
-        private void overWriteFile(string source, string destination, string defaultFileName)
-        {
-            if(string.IsNullOrEmpty(source))
-            {
-                return;
-            }
-
-            var destinationFile = string.IsNullOrEmpty(Path.GetFileName(destination)) ? Path.GetFileName(destination) : defaultFileName;
-            destination = Path.Combine(Environment.CurrentDirectory, destinationFile);
-
-            File.Copy(source, destination, overwrite: true);
-
-        }
+       
 
         private string OpenDialog(string filter = "")
         {
@@ -76,8 +72,10 @@ namespace SchoolNotifier.Interface
 
         private void activateBtn_Click(object sender, EventArgs e)
         {
-            var player = new SoundPlayer(_audioFilePath);
 
+            DailyTriggerService setuper = new DailyTriggerSetuper(_currentNotification);
+
+            var player = new SoundPlayer(_audioFilePath);
             Action action = () => player.Play();
 
             _setuper.SetUpIntervals(_scheduleFilePath);
@@ -87,6 +85,27 @@ namespace SchoolNotifier.Interface
         private void disableBtn_Click(object sender, EventArgs e)
         {
             _setuper.UnsubscribeTriggers();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            _fileManager = new ScheduleFileReader();
+            _setuper = new DailyTriggerSetuper(_fileManager);
+            jSONSerializer = new JSONSerializer<List<Notification>>();
+
+            _notifications = jSONSerializer.Deserialize("notifications.json").Result;
+
+            notificationComboBox.DataSource = _notifications;
+
+            notificationComboBox.DisplayMember = "Name";
+        }
+
+        private void notificationComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _currentNotification = (Notification)notificationComboBox.SelectedItem;
+            nameTextBox.Text = _currentNotification.Name;
+            audioFilePathTextBox.Text = _currentNotification.AudioFilePath;
+
         }
     }
 }

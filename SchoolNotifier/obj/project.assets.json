@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net6.0-windows7.0": {}
+    "net6.0-windows7.0": {
+      "NotifierData/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/NotifierData.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/NotifierData.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "NotifierData/1.0.0": {
+      "type": "project",
+      "path": "../NotifierData/NotifierData.csproj",
+      "msbuildProject": "../NotifierData/NotifierData.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0-windows7.0": []
+    "net6.0-windows7.0": [
+      "NotifierData >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\kadde\\.nuget\\packages\\": {},
@@ -14,9 +33,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kadde\\source\\repos\\SchoolNotifier\\SchoolNotifier\\SchoolNotifier.csproj",
-      "projectName": "SchoolNotifier",
-      "projectPath": "C:\\Users\\kadde\\source\\repos\\SchoolNotifier\\SchoolNotifier\\SchoolNotifier.csproj",
+      "projectUniqueName": "C:\\Users\\kadde\\source\\repos\\SchoolNotifier\\SchoolNotifier\\NotifierService.csproj",
+      "projectName": "NotifierService",
+      "projectPath": "C:\\Users\\kadde\\source\\repos\\SchoolNotifier\\SchoolNotifier\\NotifierService.csproj",
       "packagesPath": "C:\\Users\\kadde\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\kadde\\source\\repos\\SchoolNotifier\\SchoolNotifier\\obj\\",
       "projectStyle": "PackageReference",
@@ -38,7 +57,11 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\kadde\\source\\repos\\SchoolNotifier\\NotifierData\\NotifierData.csproj": {
+              "projectPath": "C:\\Users\\kadde\\source\\repos\\SchoolNotifier\\NotifierData\\NotifierData.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

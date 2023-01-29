@@ -1,6 +1,6 @@
 ﻿using SchoolNotifier;
 using SchoolNotifier.FileReader.JSON;
-using SchoolNotifier.Notification;
+using SchoolNotifier.EventNotifications;
 
 Console.WriteLine("Yello, World!");
 
@@ -35,13 +35,26 @@ reader.ReadFile(@"C:\Users\kadde\source\repos\SchoolNotifier\ConsoleClient\times
 var times = reader.GetTimes();
 var notification = new Notification("Gimn", Environment.CurrentDirectory, times);
 
+List<Notification> notifications = new List<Notification>()
+{
+    new Notification("Gimn", Environment.CurrentDirectory, times),
+    new Notification("Gimn", Environment.CurrentDirectory, times),
+    new Notification("Gimn", Environment.CurrentDirectory, times),
+    new Notification("Gimn", Environment.CurrentDirectory, times),
+    new Notification("Gimn", Environment.CurrentDirectory, times)
+};
+
 var time = new TimeOnly(17, 30, 0);
-JSONSerializer<Notification> jSONSerializer = new JSONSerializer<Notification>(notification);
+JSONSerializer<List<Notification>> jSONSerializer = new JSONSerializer<List<Notification>>(notifications);
+
 
 jSONSerializer.Serialize("notifications.json");
 
+
 var notif = await jSONSerializer.Deserialize("notifications.json");
-Console.WriteLine(notif.ToString());
+
+foreach (var Note in notif)
+{ Console.WriteLine(Note.ToString()); }
 
 
 

@@ -2,28 +2,46 @@
   "version": 3,
   "targets": {
     "net6.0-windows7.0": {
-      "SchoolNotifier/1.0.0": {
+      "NotifierData/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "compile": {
-          "bin/placeholder/SchoolNotifier.dll": {}
+          "bin/placeholder/NotifierData.dll": {}
         },
         "runtime": {
-          "bin/placeholder/SchoolNotifier.dll": {}
+          "bin/placeholder/NotifierData.dll": {}
+        }
+      },
+      "NotifierService/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "NotifierData": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/NotifierService.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/NotifierService.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "SchoolNotifier/1.0.0": {
+    "NotifierData/1.0.0": {
       "type": "project",
-      "path": "../SchoolNotifier/SchoolNotifier.csproj",
-      "msbuildProject": "../SchoolNotifier/SchoolNotifier.csproj"
+      "path": "../NotifierData/NotifierData.csproj",
+      "msbuildProject": "../NotifierData/NotifierData.csproj"
+    },
+    "NotifierService/1.0.0": {
+      "type": "project",
+      "path": "../SchoolNotifier/NotifierService.csproj",
+      "msbuildProject": "../SchoolNotifier/NotifierService.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
-      "SchoolNotifier >= 1.0.0"
+      "NotifierService >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -58,8 +76,8 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\kadde\\source\\repos\\SchoolNotifier\\SchoolNotifier\\SchoolNotifier.csproj": {
-              "projectPath": "C:\\Users\\kadde\\source\\repos\\SchoolNotifier\\SchoolNotifier\\SchoolNotifier.csproj"
+            "C:\\Users\\kadde\\source\\repos\\SchoolNotifier\\SchoolNotifier\\NotifierService.csproj": {
+              "projectPath": "C:\\Users\\kadde\\source\\repos\\SchoolNotifier\\SchoolNotifier\\NotifierService.csproj"
             }
           }
         }

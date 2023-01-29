@@ -34,14 +34,17 @@
             this.audioFilePathTextBox = new System.Windows.Forms.TextBox();
             this.activateBtn = new System.Windows.Forms.Button();
             this.disableBtn = new System.Windows.Forms.Button();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
+            this.nameLabel = new System.Windows.Forms.Label();
+            this.notificationComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // SelectScheduleBtn
             // 
-            this.SelectScheduleBtn.Location = new System.Drawing.Point(125, 283);
+            this.SelectScheduleBtn.Location = new System.Drawing.Point(509, 142);
             this.SelectScheduleBtn.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.SelectScheduleBtn.Name = "SelectScheduleBtn";
-            this.SelectScheduleBtn.Size = new System.Drawing.Size(302, 39);
+            this.SelectScheduleBtn.Size = new System.Drawing.Size(155, 23);
             this.SelectScheduleBtn.TabIndex = 0;
             this.SelectScheduleBtn.Text = "Обрати розклад";
             this.SelectScheduleBtn.UseVisualStyleBackColor = true;
@@ -49,18 +52,18 @@
             // 
             // scheduleFilePathTextBox
             // 
-            this.scheduleFilePathTextBox.Location = new System.Drawing.Point(33, 231);
+            this.scheduleFilePathTextBox.Location = new System.Drawing.Point(43, 142);
             this.scheduleFilePathTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.scheduleFilePathTextBox.Name = "scheduleFilePathTextBox";
-            this.scheduleFilePathTextBox.Size = new System.Drawing.Size(480, 23);
+            this.scheduleFilePathTextBox.Size = new System.Drawing.Size(431, 23);
             this.scheduleFilePathTextBox.TabIndex = 1;
             // 
             // selectAudioFileBtn
             // 
-            this.selectAudioFileBtn.Location = new System.Drawing.Point(747, 294);
+            this.selectAudioFileBtn.Location = new System.Drawing.Point(509, 89);
             this.selectAudioFileBtn.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.selectAudioFileBtn.Name = "selectAudioFileBtn";
-            this.selectAudioFileBtn.Size = new System.Drawing.Size(155, 27);
+            this.selectAudioFileBtn.Size = new System.Drawing.Size(155, 23);
             this.selectAudioFileBtn.TabIndex = 2;
             this.selectAudioFileBtn.Text = "Обрати аудіо";
             this.selectAudioFileBtn.UseVisualStyleBackColor = true;
@@ -68,7 +71,7 @@
             // 
             // audioFilePathTextBox
             // 
-            this.audioFilePathTextBox.Location = new System.Drawing.Point(637, 231);
+            this.audioFilePathTextBox.Location = new System.Drawing.Point(43, 89);
             this.audioFilePathTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.audioFilePathTextBox.Name = "audioFilePathTextBox";
             this.audioFilePathTextBox.Size = new System.Drawing.Size(431, 23);
@@ -76,7 +79,7 @@
             // 
             // activateBtn
             // 
-            this.activateBtn.Location = new System.Drawing.Point(43, 457);
+            this.activateBtn.Location = new System.Drawing.Point(91, 190);
             this.activateBtn.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.activateBtn.Name = "activateBtn";
             this.activateBtn.Size = new System.Drawing.Size(88, 27);
@@ -87,7 +90,7 @@
             // 
             // disableBtn
             // 
-            this.disableBtn.Location = new System.Drawing.Point(306, 459);
+            this.disableBtn.Location = new System.Drawing.Point(341, 190);
             this.disableBtn.Name = "disableBtn";
             this.disableBtn.Size = new System.Drawing.Size(96, 23);
             this.disableBtn.TabIndex = 5;
@@ -95,11 +98,39 @@
             this.disableBtn.UseVisualStyleBackColor = true;
             this.disableBtn.Click += new System.EventHandler(this.disableBtn_Click);
             // 
+            // nameTextBox
+            // 
+            this.nameTextBox.Location = new System.Drawing.Point(43, 40);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(431, 23);
+            this.nameTextBox.TabIndex = 6;
+            // 
+            // nameLabel
+            // 
+            this.nameLabel.AutoSize = true;
+            this.nameLabel.Location = new System.Drawing.Point(45, 15);
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(39, 15);
+            this.nameLabel.TabIndex = 7;
+            this.nameLabel.Text = "Name";
+            // 
+            // notificationComboBox
+            // 
+            this.notificationComboBox.FormattingEnabled = true;
+            this.notificationComboBox.Location = new System.Drawing.Point(509, 40);
+            this.notificationComboBox.Name = "notificationComboBox";
+            this.notificationComboBox.Size = new System.Drawing.Size(249, 23);
+            this.notificationComboBox.TabIndex = 8;
+            this.notificationComboBox.SelectedIndexChanged += new System.EventHandler(this.notificationComboBox_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1108, 752);
+            this.ClientSize = new System.Drawing.Size(778, 281);
+            this.Controls.Add(this.notificationComboBox);
+            this.Controls.Add(this.nameLabel);
+            this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.disableBtn);
             this.Controls.Add(this.activateBtn);
             this.Controls.Add(this.audioFilePathTextBox);
@@ -109,6 +140,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -122,6 +154,9 @@
         private System.Windows.Forms.TextBox audioFilePathTextBox;
         private System.Windows.Forms.Button activateBtn;
         private Button disableBtn;
+        private TextBox nameTextBox;
+        private Label nameLabel;
+        private ComboBox notificationComboBox;
     }
 }
 

@@ -9,7 +9,7 @@
   </PropertyGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\SchoolNotifier\SchoolNotifier.csproj" />
+		<ProjectReference Include="..\SchoolNotifier\NotifierService.csproj" />
 	</ItemGroup>
 
 </Project>

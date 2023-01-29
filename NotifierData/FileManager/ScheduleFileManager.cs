@@ -1,6 +1,6 @@
 namespace SchoolNotifier;
 
-public class ScheduleFileReader : IFileManager
+public class ScheduleFileManager : IFileManager
 {
     private string[] _lines;
     private List<DateTime> _times;
@@ -66,7 +66,6 @@ public class ScheduleFileReader : IFileManager
         if (string.IsNullOrEmpty(source))
             return;
         
-
         var destinationFile = string.IsNullOrEmpty(Path.GetFileName(destination)) ? Path.GetFileName(destination) : defaultFileName;
         destination = Path.Combine(Environment.CurrentDirectory, destinationFile);
 

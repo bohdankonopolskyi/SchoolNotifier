@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolNotifier", "SchoolNotifier\SchoolNotifier.csproj", "{75B9EDA0-7BB6-496D-815E-E112C4B037CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NotifierService", "SchoolNotifier\NotifierService.csproj", "{75B9EDA0-7BB6-496D-815E-E112C4B037CC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleClient", "ConsoleClient\ConsoleClient.csproj", "{79F714D1-6A3C-4E0D-AF8D-39582CB09DA9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forms", "SchoolNotifier.Forms\Forms.csproj", "{99357932-C34E-42FA-BC47-ED6D0941ABA5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolNotifier.Interface", "SchoolNotifier.Interface\SchoolNotifier.Interface.csproj", "{1FCE7737-FF8E-4B9B-AA9E-8E3CA1061097}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolNotifier.Interface", "SchoolNotifier.Interface\SchoolNotifier.Interface.csproj", "{1FCE7737-FF8E-4B9B-AA9E-8E3CA1061097}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotifierData", "NotifierData\NotifierData.csproj", "{F8FDE510-4B7B-48F2-A2E6-AD8E16054CDE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{1FCE7737-FF8E-4B9B-AA9E-8E3CA1061097}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1FCE7737-FF8E-4B9B-AA9E-8E3CA1061097}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1FCE7737-FF8E-4B9B-AA9E-8E3CA1061097}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8FDE510-4B7B-48F2-A2E6-AD8E16054CDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8FDE510-4B7B-48F2-A2E6-AD8E16054CDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8FDE510-4B7B-48F2-A2E6-AD8E16054CDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8FDE510-4B7B-48F2-A2E6-AD8E16054CDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
