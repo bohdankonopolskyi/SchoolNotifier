@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "pdHFpUUIH4EuhOQT0xdPYLYALLbiR9kQcpF5P3BR0KL6f1TKXyPLU/YHt0Ec1SOQmWESF/z7EJcwMJND43grMQ==",
+  "dgSpecHash": "XzxbE0J+/48Q4L6dgs9180mIgIc1UYpLqe2eY51QyRqpy77uAL8TZDGZzXsZfFd7OW09tbkHbZ997MEeCPlp8Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\kadde\\source\\repos\\SchoolNotifier\\ConsoleClient\\ConsoleClient.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\kadde\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
+    "C:\\Users\\kadde\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512",
+    "C:\\Users\\kadde\\.nuget\\packages\\system.windows.extensions\\7.0.0\\system.windows.extensions.7.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

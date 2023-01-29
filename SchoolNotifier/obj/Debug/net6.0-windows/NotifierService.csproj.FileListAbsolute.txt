@@ -1,0 +1,15 @@
+C:\Users\kadde\source\repos\SchoolNotifier\SchoolNotifier\bin\Debug\net6.0-windows\NotifierService.deps.json
+C:\Users\kadde\source\repos\SchoolNotifier\SchoolNotifier\bin\Debug\net6.0-windows\NotifierService.dll
+C:\Users\kadde\source\repos\SchoolNotifier\SchoolNotifier\bin\Debug\net6.0-windows\NotifierService.pdb
+C:\Users\kadde\source\repos\SchoolNotifier\SchoolNotifier\bin\Debug\net6.0-windows\NotifierData.dll
+C:\Users\kadde\source\repos\SchoolNotifier\SchoolNotifier\bin\Debug\net6.0-windows\NotifierData.pdb
+C:\Users\kadde\source\repos\SchoolNotifier\SchoolNotifier\obj\Debug\net6.0-windows\NotifierService.csproj.AssemblyReference.cache
+C:\Users\kadde\source\repos\SchoolNotifier\SchoolNotifier\obj\Debug\net6.0-windows\NotifierService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kadde\source\repos\SchoolNotifier\SchoolNotifier\obj\Debug\net6.0-windows\NotifierService.AssemblyInfoInputs.cache
+C:\Users\kadde\source\repos\SchoolNotifier\SchoolNotifier\obj\Debug\net6.0-windows\NotifierService.AssemblyInfo.cs
+C:\Users\kadde\source\repos\SchoolNotifier\SchoolNotifier\obj\Debug\net6.0-windows\NotifierService.csproj.CoreCompileInputs.cache
+C:\Users\kadde\source\repos\SchoolNotifier\SchoolNotifier\obj\Debug\net6.0-windows\NotifierService.csproj.CopyComplete
+C:\Users\kadde\source\repos\SchoolNotifier\SchoolNotifier\obj\Debug\net6.0-windows\NotifierService.dll
+C:\Users\kadde\source\repos\SchoolNotifier\SchoolNotifier\obj\Debug\net6.0-windows\refint\NotifierService.dll
+C:\Users\kadde\source\repos\SchoolNotifier\SchoolNotifier\obj\Debug\net6.0-windows\NotifierService.pdb
+C:\Users\kadde\source\repos\SchoolNotifier\SchoolNotifier\obj\Debug\net6.0-windows\ref\NotifierService.dll

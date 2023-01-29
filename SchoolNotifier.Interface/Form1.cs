@@ -8,26 +8,30 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
-using SchoolNotifier.EventNotifications;
-using SchoolNotifier.FileReader.JSON;
 using NotifierService.EventTrigger;
+using NotifierData.JSON;
+using NotifierData.Models;
 
 namespace SchoolNotifier.Interface
 {
     public partial class Form1 : Form
     {
+        private string configFile = "notifications.json";
         private string _scheduleFilePath = Environment.CurrentDirectory;
         private string _audioFilePath = Environment.CurrentDirectory;
+        private IConfigurator _configurator;
+
         private DailyTriggerService _setuper;
         private IFileManager _fileManager;
-        private JSONSerializer<List<Notification>> jSONSerializer;
-        private List<Notification> _notifications;
+        private IJSONRepository<List<Notification>> _jSONRepository;
+        
         private Notification _currentNotification;
+
         public Form1()
         {
             InitializeComponent();
-          
-            
+
+
         }
 
         private void SelectScheduleBtn_Click(object sender, EventArgs e)
@@ -43,16 +47,16 @@ namespace SchoolNotifier.Interface
         private void selectAudioFileBtn_Click(object sender, EventArgs e)
         {
             string filePath = OpenDialog("wav files (*.wav)|*.wav|All files (*.*)|*.*");
-           
+
             _audioFilePath = filePath;
             audioFilePathTextBox.Text = filePath;
 
             var filetype = "sound" + Path.GetExtension(filePath);
             audioFilePathTextBox.Text = filetype;
-           _fileManager.CopyFile(filePath, _audioFilePath, filetype);
+            _fileManager.CopyFile(filePath, _audioFilePath, filetype);
         }
 
-       
+
 
         private string OpenDialog(string filter = "")
         {
@@ -70,33 +74,28 @@ namespace SchoolNotifier.Interface
             return string.Empty;
         }
 
-        private void activateBtn_Click(object sender, EventArgs e)
+        private async void activateBtn_Click(object sender, EventArgs e)
         {
-
-            DailyTriggerService setuper = new DailyTriggerSetuper(_currentNotification);
-
-            var player = new SoundPlayer(_audioFilePath);
-            Action action = () => player.Play();
-
-            _setuper.SetUpIntervals(_scheduleFilePath);
-            _setuper.SubscribeTriggers(action);
+           await SetupNotificationAsync();
         }
 
-        private void disableBtn_Click(object sender, EventArgs e)
+        private async void disableBtn_Click(object sender, EventArgs e)
         {
-            _setuper.UnsubscribeTriggers();
+            _setuper.UnsubscribeTriggers(_currentNotification.Id);
+           await _setuper.RemoveNotificationAsync(_currentNotification.Id);
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private async void Form1_Load(object sender, EventArgs e)
         {
-            _fileManager = new ScheduleFileReader();
-            _setuper = new DailyTriggerSetuper(_fileManager);
-            jSONSerializer = new JSONSerializer<List<Notification>>();
+            _fileManager = new ScheduleFileManager();
+            _jSONRepository = new JSONRepository(configFile);
+            _setuper = new DailyTriggerService(_jSONRepository);
 
-            _notifications = jSONSerializer.Deserialize("notifications.json").Result;
+            _configurator = new Configurator(_setuper, _jSONRepository);
+           await _configurator.SetConfiguration();
 
-            notificationComboBox.DataSource = _notifications;
-
+            notificationComboBox.DataSource = _jSONRepository.Data;
+            
             notificationComboBox.DisplayMember = "Name";
         }
 
@@ -106,6 +105,35 @@ namespace SchoolNotifier.Interface
             nameTextBox.Text = _currentNotification.Name;
             audioFilePathTextBox.Text = _currentNotification.AudioFilePath;
 
+            _audioFilePath = Path.Combine(Environment.CurrentDirectory, _currentNotification.AudioFilePath);
+            
+
+        }
+
+        private async Task SetupNotificationAsync()
+        {
+            _fileManager.ReadFile(_scheduleFilePath);
+            var schedule = _fileManager.GetTimes();
+
+            if (schedule.Count != 0)
+            {
+                var newFileName = nameTextBox.Text + Path.GetExtension(_audioFilePath);
+
+                _fileManager.CopyFile(_audioFilePath, Environment.CurrentDirectory, newFileName); 
+
+                Notification notification = new Notification(nameTextBox.Text, newFileName, schedule);
+
+                _currentNotification = notification;
+               await _setuper.AddNotificationAsync(notification);
+
+
+                var player = new SoundPlayer(Path.Combine(Environment.CurrentDirectory, notification.AudioFilePath));
+                Action action = () => player.Play();
+
+                _setuper.SubscribeTriggers(notification.Id, action);
+
+                notificationComboBox.Refresh();
+            }
         }
     }
 }

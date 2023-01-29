@@ -2,6 +2,7 @@ namespace SchoolNotifier;
 
 public class DailyTrigger : IDisposable
 {
+    public Guid NotificationId { get; set; }
     TimeSpan TriggerHour { get; }
     CancellationTokenSource CancellationToken { get; set; }
     Task RunningTask { get; set; }

@@ -9,39 +9,77 @@
     ]
   },
   {
-    "Name": "Alarm",
-    "AudioFilePath": "C:\\Users\\kadde\\source\\repos\\SchoolNotifier\\ConsoleClient\\bin\\Debug\\net6.0-windows",
+    "Name": "note2",
+    "AudioFilePath": "note2.wav",
     "Schedule": [
-      "2023-01-28T14:28:00",
+      "2023-01-29T14:28:00",
+      "2023-01-29T14:28:10",
+      "2023-01-29T14:28:20"
+    ]
+  }
+]28:00",
       "2023-01-28T14:28:10",
       "2023-01-28T14:28:20"
     ]
   },
   {
-    "Name": "Coffee",
-    "AudioFilePath": "C:\\Users\\kadde\\source\\repos\\SchoolNotifier\\ConsoleClient\\bin\\Debug\\net6.0-windows",
+    "Name": "note2",
+    "AudioFilePath": "note2.wav",
     "Schedule": [
-      "2023-01-28T14:28:00",
+      "2023-01-29T14:28:00",
+      "2023-01-29T14:28:10",
+      "2023-01-29T14:28:20"
+    ]
+  }
+]8:00",
       "2023-01-28T14:28:10",
       "2023-01-28T14:28:20"
     ]
   },
   {
-    "Name": "Long",
-    "AudioFilePath": "C:\\Users\\kadde\\source\\repos\\SchoolNotifier\\ConsoleClient\\bin\\Debug\\net6.0-windows",
+    "Name": "note2",
+    "AudioFilePath": "note2.wav",
     "Schedule": [
-      "2023-01-28T14:28:00",
+      "2023-01-29T14:28:00",
+      "2023-01-29T14:28:10",
+      "2023-01-29T14:28:20"
+    ]
+  }
+]8:00",
       "2023-01-28T14:28:10",
       "2023-01-28T14:28:20"
     ]
   },
   {
-    "Name": "Gimn",
-    "AudioFilePath": "C:\\Users\\kadde\\source\\repos\\SchoolNotifier\\ConsoleClient\\bin\\Debug\\net6.0-windows",
+    "Name": "note2",
+    "AudioFilePath": "note2.wav",
     "Schedule": [
-      "2023-01-28T14:28:00",
+      "2023-01-29T14:28:00",
+      "2023-01-29T14:28:10",
+      "2023-01-29T14:28:20"
+    ]
+  }
+]:28:00",
       "2023-01-28T14:28:10",
       "2023-01-28T14:28:20"
+    ]
+  },
+  {
+    "Name": "note2",
+    "AudioFilePath": "note2.wav",
+    "Schedule": [
+      "2023-01-29T14:28:00",
+      "2023-01-29T14:28:10",
+      "2023-01-29T14:28:20"
+    ]
+  }
+]{
+    "Name": "note2",
+    "AudioFilePath": "note2.wav",
+    "Schedule": [
+      "2023-01-29T14:28:00",
+      "2023-01-29T14:28:10",
+      "2023-01-29T14:28:20"
     ]
   }
 ]

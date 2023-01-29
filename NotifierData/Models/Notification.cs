@@ -1,4 +1,6 @@
-﻿namespace NotifierData.Models
+﻿using System.Text.Json.Serialization;
+
+namespace NotifierData.Models
 {
     public class Notification
     {
@@ -9,6 +11,8 @@
             Schedule = schedule;
         }
 
+        [JsonIgnore]
+        public System.Guid Id = System.Guid.NewGuid();
         public string Name { get; set; }
         public string AudioFilePath { get; set; }
         public List<DateTime> Schedule { get; set; }

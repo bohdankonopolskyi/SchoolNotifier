@@ -1,35 +1,44 @@
-﻿using System.Text.Json;
+﻿using NotifierData.Models;
+using System.Text.Json;
 
 namespace NotifierData.JSON
 {
-    public class JSONRepository<T> : ISerializer<T> where T : class
+    public class JSONRepository : IJSONRepository<List<Notification>>
     {
-        private T _data;
+        private List<Notification> _data;
+        private string _fileName;
         private static JsonSerializerOptions _options = new JsonSerializerOptions
         {
             WriteIndented = true,
             AllowTrailingCommas = true
 
         };
-        public T Data
+        public List<Notification> Data
         {
-            get { return _data; }
+            get {
+                if (_data == null)
+                {
+                    _data = new List<Notification>();
+                    return Deserialize();
+                }
+                return _data; 
+            }
             set { _data = value; }
         }
 
-        public JSONRepository()
+        public JSONRepository(string file)
         {
-
+            _fileName = file;
         }
 
-        public JSONRepository(T data)
+        public JSONRepository(List<Notification> data)
         {
             _data = data;
         }
 
-        public async Task SerializeAsync(string fileName)
+        public async Task SerializeAsync()
         {
-            using (FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream(_fileName, FileMode.OpenOrCreate))
             {
                 if (_data != null)
                 {
@@ -38,11 +47,21 @@ namespace NotifierData.JSON
             }
         }
 
-        public async Task<T>DeserializeAsync(string fileName)
+        public async Task<List<Notification>> DeserializeAsync()
         {
-            using (FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream(_fileName, FileMode.OpenOrCreate))
             {
-                _data = await JsonSerializer.DeserializeAsync<T>(fs);
+                _data = await JsonSerializer.DeserializeAsync<List<Notification>>(fs);
+            }
+
+            return _data;
+        }
+
+        public  List<Notification> Deserialize()
+        {
+            using (FileStream fs = new FileStream(_fileName, FileMode.OpenOrCreate))
+            {
+                _data =  JsonSerializer.Deserialize<List<Notification>>(fs);
             }
 
             return _data;

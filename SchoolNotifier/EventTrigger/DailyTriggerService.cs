@@ -1,27 +1,56 @@
 using SchoolNotifier;
 using NotifierData.Models;
+using NotifierData.JSON;
 
 namespace NotifierService.EventTrigger;
 
 public class DailyTriggerService
 {
-    private List<DateTime> _dates;
+    
     private List<DailyTrigger> _triggers;
-
-    public DailyTriggerService(Notification notification)
+    private IJSONRepository<List<Notification>> _notificationRepository;
+    public DailyTriggerService(IJSONRepository<List<Notification>> notificationRepository)
     {
-        _dates = notification.Schedule;
+        _notificationRepository = notificationRepository;
     }
 
-    public void SubscribeTriggers(Action action)
+    public async Task<List<Notification>> GetNotificationsAsync()
+    {
+        return await _notificationRepository.DeserializeAsync();
+    }
+
+    public List<Notification> GetNotifications()
+    {
+        return _notificationRepository.Data;
+    }
+
+    public async Task AddNotificationAsync(Notification notification)
+    {
+        _notificationRepository.Data.Add(notification);
+       await _notificationRepository.SerializeAsync();
+    }
+
+    public async Task RemoveNotificationAsync(Guid id)
+    {
+        var notification = _notificationRepository.Data.FirstOrDefault(x => x.Id == id);
+        if (notification != null)
+            _notificationRepository.Data.Remove(notification);
+        
+        await _notificationRepository.SerializeAsync();
+    }
+    public void SubscribeTriggers(Guid id, Action action)
     {
         _triggers = new List<DailyTrigger>();
 
-        foreach (var date in _dates)
+        List<DateTime>? dates = _notificationRepository.Data?.FirstOrDefault(x => x.Id == id).Schedule;
+
+        if(dates != null)
+        foreach (var date in dates)
         {
             TimeOnly time = TimeOnly.FromDateTime(date);
 
             var trigger = new DailyTrigger(time.Hour, time.Minute, time.Second);
+                trigger.NotificationId = id;
             trigger.OnTimeTriggered += () =>
             {
                 action();
@@ -33,16 +62,22 @@ public class DailyTriggerService
         }
     }
 
-    public void UnsubscribeTriggers()
+    public void UnsubscribeTriggers(Guid id)
     {
-        if (_triggers != null)
+        var notification = _notificationRepository.Data?.FirstOrDefault(x => x.Id == id);
+        if(notification != null && _triggers != null) 
             foreach (var trigger in _triggers)
             {
-                trigger.OnTimeTriggered -= () =>
-                {
-                    Console.WriteLine("Trigger is unsubscribed");
-                };
-                _triggers.Remove(trigger);
+                    if (trigger.NotificationId == id)
+                    {
+                        trigger.OnTimeTriggered -= () =>
+                        {
+                            Console.WriteLine("Trigger is unsubscribed");
+                        };
+                        _triggers.Remove(trigger);
+                    }
             }
+
+        
     }
 }

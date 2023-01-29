@@ -9,8 +9,6 @@ C:\Users\kadde\source\repos\SchoolNotifier\SchoolNotifier.Interface\bin\Debug\ne
 C:\Users\kadde\source\repos\SchoolNotifier\SchoolNotifier.Interface\bin\Debug\net6.0-windows\SchoolNotifier.Interface.runtimeconfig.json
 C:\Users\kadde\source\repos\SchoolNotifier\SchoolNotifier.Interface\bin\Debug\net6.0-windows\SchoolNotifier.Interface.dll
 C:\Users\kadde\source\repos\SchoolNotifier\SchoolNotifier.Interface\bin\Debug\net6.0-windows\SchoolNotifier.Interface.pdb
-C:\Users\kadde\source\repos\SchoolNotifier\SchoolNotifier.Interface\bin\Debug\net6.0-windows\SchoolNotifier.dll
-C:\Users\kadde\source\repos\SchoolNotifier\SchoolNotifier.Interface\bin\Debug\net6.0-windows\SchoolNotifier.pdb
 C:\Users\kadde\source\repos\SchoolNotifier\SchoolNotifier.Interface\obj\Debug\net6.0-windows\SchoolNotifier.Interface.Form1.resources
 C:\Users\kadde\source\repos\SchoolNotifier\SchoolNotifier.Interface\obj\Debug\net6.0-windows\SchoolNotifier.Interface.csproj.CopyComplete
 C:\Users\kadde\source\repos\SchoolNotifier\SchoolNotifier.Interface\obj\Debug\net6.0-windows\SchoolNotifier.Interface.dll
@@ -18,3 +16,13 @@ C:\Users\kadde\source\repos\SchoolNotifier\SchoolNotifier.Interface\obj\Debug\ne
 C:\Users\kadde\source\repos\SchoolNotifier\SchoolNotifier.Interface\obj\Debug\net6.0-windows\SchoolNotifier.Interface.pdb
 C:\Users\kadde\source\repos\SchoolNotifier\SchoolNotifier.Interface\obj\Debug\net6.0-windows\SchoolNotifier.Interface.genruntimeconfig.cache
 C:\Users\kadde\source\repos\SchoolNotifier\SchoolNotifier.Interface\obj\Debug\net6.0-windows\ref\SchoolNotifier.Interface.dll
+C:\Users\kadde\source\repos\SchoolNotifier\SchoolNotifier.Interface\bin\Debug\net6.0-windows\NotifierData.dll
+C:\Users\kadde\source\repos\SchoolNotifier\SchoolNotifier.Interface\bin\Debug\net6.0-windows\NotifierService.dll
+C:\Users\kadde\source\repos\SchoolNotifier\SchoolNotifier.Interface\bin\Debug\net6.0-windows\NotifierService.pdb
+C:\Users\kadde\source\repos\SchoolNotifier\SchoolNotifier.Interface\bin\Debug\net6.0-windows\NotifierData.pdb
+C:\Users\kadde\source\repos\SchoolNotifier\SchoolNotifier.Interface\bin\Debug\net6.0-windows\Microsoft.Win32.SystemEvents.dll
+C:\Users\kadde\source\repos\SchoolNotifier\SchoolNotifier.Interface\bin\Debug\net6.0-windows\System.Drawing.Common.dll
+C:\Users\kadde\source\repos\SchoolNotifier\SchoolNotifier.Interface\bin\Debug\net6.0-windows\System.Windows.Extensions.dll
+C:\Users\kadde\source\repos\SchoolNotifier\SchoolNotifier.Interface\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\kadde\source\repos\SchoolNotifier\SchoolNotifier.Interface\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\kadde\source\repos\SchoolNotifier\SchoolNotifier.Interface\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Windows.Extensions.dll

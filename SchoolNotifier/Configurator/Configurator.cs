@@ -1,23 +1,32 @@
+using NotifierData.JSON;
+using NotifierData.Models;
+using NotifierService.EventTrigger;
+using System.Media;
+
 namespace SchoolNotifier;
 
-public class Configurator: IConfigurator
+public class Configurator : IConfigurator
 {
-    private string _filePath;
-
-    public string FilePath
+    private DailyTriggerService _setuper;
+  
+    private IJSONRepository<List<Notification>> _jSONRepository;
+    public Configurator(DailyTriggerService service,  IJSONRepository<List<Notification>> jSONRepository)
     {
-        get => _filePath;
-        set => _filePath = value;
+        _setuper = service;
+        
+        _jSONRepository = jSONRepository;
     }
 
-    public string ReadConfiguration()
-    {
-        return File.ReadAllText(_filePath);
-    }
 
-    public async Task SetConfiguration(string path)
+    public async Task SetConfiguration()
     {
+       foreach(var notification in _jSONRepository.Data)
+        {
+            var player = new SoundPlayer(Path.Combine(Environment.CurrentDirectory, notification.AudioFilePath));
+            Action action = () => player.Play();
 
-        await File.WriteAllTextAsync(_filePath, path);
+            _setuper.SubscribeTriggers(notification.Id, action);
+        }
+        
     }
 }
